@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\Categories;
 
@@ -41,7 +41,7 @@ class ProductCategoryController extends Controller
         /**
          * cek validasi input
          */
-        $validator = \Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255',
             'description' => 'required'
@@ -110,7 +110,7 @@ class ProductCategoryController extends Controller
         /**
          * cek validasi input
          */
-        $validator = \Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'slug' => 'required|string|max:255',
             'description' => 'required'

@@ -107,7 +107,7 @@ class ProductController extends Controller
             $product->image = $imagePath;
         }
         $product->save();
-        return redirect()->back()->with('successMessage', 'Produk berhasil diperbarui');
+        return redirect()->route('products.index')->with('successMessage', 'Produk berhasil diperbarui');
     }
 
     public function destroy(string $id)
